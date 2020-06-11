@@ -1,11 +1,18 @@
 import React from 'react';
 import SearchBar from '../../components/SearchBar';
+import { Container, Row, Col } from 'reactstrap';
 
 function Home(){
     return(
         <div>
-            <h1>Home Heading</h1>
-            <SearchBar />
+            <Container>
+                <Row>
+                    <h1>Pokédex</h1>
+                </Row>
+                <Row>
+                    <SearchBar />
+                </Row>
+            </Container>
         </div>
     )
 }
