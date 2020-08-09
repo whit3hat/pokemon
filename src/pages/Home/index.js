@@ -6,15 +6,17 @@ import { Container, Row, Col } from 'reactstrap';
 function Home(){
     return(
         <div>
-            <Container>
+            <Container>   
+                <Navbar />
                 <Row>
-                    <Navbar />
+                    <Col xs='12' sm='12' lg='4'>
+                        <h1>Pokédex</h1>
+                    </Col>
                 </Row>
                 <Row>
-                    <h1>Pokédex</h1>
-                </Row>
-                <Row>
-                    <SearchBar />
+                    <Col xs='12' sm='12' lg='4'>
+                        <SearchBar />
+                    </Col>
                 </Row>
             </Container>
         </div>

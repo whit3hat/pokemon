@@ -1,16 +1,14 @@
 import axios from 'axios';
 
-function fetchPokemon() {
-    return axios
-    .get('https://pokeapi.co/api/v2/pokemon/ditto')
-    .then(res => { console.log(res)
-    })
-    .catch(function (err) {
-        console.log(err);
-    })
-    .then(function () {
+const URL = 'https://pokeapi.co/api/v2/pokemon/';
 
-    })
+export const fetchPokemon = async (query) => {
+    const { data } = await axios.get(URL, {
+        params: {
+
+        }
+    });
+
+    return data;
 }
 
-export default fetchPokemon;

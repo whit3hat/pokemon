@@ -7,6 +7,8 @@ function handleClick(e) {
     fetchPokemon()
 };
 
+
+
 const SearchBar = (props) => {
     return (
         <div>
