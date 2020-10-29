@@ -6,12 +6,15 @@ var P = new Pokedex();
 export const fetchPokemon = async (query) => {
 
     P.getPokemonByName(query)
-    .then(function(res) {
-        console.log(res);
+    .then(function(pokemon) {
+        console.log(pokemon);
+        
     })
     .catch(function(err) {
         console.log(`There was an ERR ${err}`)
     })
+
+
 
 }
 
