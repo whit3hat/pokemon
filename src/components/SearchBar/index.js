@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import fetchPokemon from '../../utils/API';
+import { fetchPokemon } from '../../utils/API';
 
 function handleClick(e) {
     e.preventDefault();
