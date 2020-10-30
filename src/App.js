@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Home from '../src/pages/Home';
-import { fetchPokemon } from './utils/API';
+var Pokedex = require('pokedex-promise-v2');
+var P = new Pokedex();
 
 
 const App = () => {
@@ -10,8 +11,15 @@ const App = () => {
   const search = async (e) => {
   
     if(e.key === 'Enter') {
-      const data = await fetchPokemon(query)
-      // console.log(data)
+      
+      P.getPokemonByName(query)
+      .then(function(pokemon) {
+        console.log(pokemon);
+
+      })
+      .catch(function(err) {
+        console.log(`There was an error ${err}`)
+      })
 
       setQuery('')
     }
