@@ -10,11 +10,13 @@ const App = () => {
   const search = async (e) => {
   
     if(e.key === 'Enter') {
+      //Pass the query of the pokemon name to the api call to search
       const data = await fetchPokemon(query)
+      //Console logging the results of the search
       console.log(data)
-     
+     //Passing the data of the response to the pokemon state to display information on the site
       setPokemon(data);
-
+      // Clears the search box after the search is made
       setQuery('')
     }
   }
