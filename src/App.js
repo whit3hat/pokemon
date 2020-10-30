@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import Home from '../src/pages/Home';
-var Pokedex = require('pokedex-promise-v2');
-var P = new Pokedex();
+// import Home from '../src/pages/Home';
+import {fetchPokemon} from './api/fetchPokemon';
 
 
 const App = () => {
@@ -11,15 +10,10 @@ const App = () => {
   const search = async (e) => {
   
     if(e.key === 'Enter') {
-      
-      P.getPokemonByName(query)
-      .then(function(pokemon) {
-        console.log(pokemon);
-
-      })
-      .catch(function(err) {
-        console.log(`There was an error ${err}`)
-      })
+      const data = await fetchPokemon(query)
+      console.log(data)
+     
+      setPokemon(data);
 
       setQuery('')
     }
@@ -28,7 +22,13 @@ const App = () => {
   return (
   <div className='main-container'>
     <input type='text' className='search' placeholder='Search...' value={query} onChange={(e) => setQuery(e.target.value)} onKeyPress={search} />
-   
+    <div className='pokemon'>
+      <h2 className='pokemonName'>
+        <span>Name: {pokemon.name}</span> <br />
+        <span>Height: {pokemon.height}</span>
+        {/* <span>{pokemon.moves[0].move.name}</span> */}
+      </h2>
+    </div>
   </div>
   );
 }
