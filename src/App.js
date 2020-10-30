@@ -24,14 +24,20 @@ const App = () => {
   return (
   <div className='main-container'>
     <input type='text' className='search' placeholder='Search...' value={query} onChange={(e) => setQuery(e.target.value)} onKeyPress={search} />
-    <div className='pokemon'>
-      <h2 className='pokemonName'>
-        <span>Name: {pokemon.name}</span> <br />
-        <span>Height: {pokemon.height}</span>
-        {/* <span>{pokemon.moves[0].move.name}</span> */}
+    {pokemon.name && (
+      <div className='pokemon'>
+        <h2 className='pokemonName'>
+          <span>Name: {pokemon.name}</span> <br />
+          <span>Height: {pokemon.height}</span> <br />
+          <span>{pokemon.abilities[0].ability.name}</span> <br />
+          <span>{pokemon.abilities[1].ability.name}</span> <br />
+          <span>{pokemon.abilities[2].ability.name}</span> <br />
+
       </h2>
     </div>
-  </div>
+  
+    )}
+    </div>
   );
 }
 
