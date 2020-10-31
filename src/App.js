@@ -29,13 +29,14 @@ const App = () => {
         <h2 className='pokemonName'> </h2>
           <span>Name: {pokemon.name}</span> <br />
           <span>Height: {pokemon.height}</span> <br />
+          <span>Base HP: {pokemon.stats[0].base_stat}</span>
 
-          {/* Going to need to put the abilities array in an if statement since
+          {/* Going to need to put the abilities array in a foreach
           Not all pokemon have the same number of abilities */}
           <h3>Abilities:</h3>
           <span>{pokemon.abilities[0].ability.name}</span> <br />
           <span>{pokemon.abilities[1].ability.name}</span> <br />
-          <img className='pokemonImg' src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt={pokemon.name} />
+          <img className='pokemonImg' src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`} alt={pokemon.name} />
      
     </div>
   
