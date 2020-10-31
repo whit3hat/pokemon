@@ -26,14 +26,17 @@ const App = () => {
     <input type='text' className='search' placeholder='Search...' value={query} onChange={(e) => setQuery(e.target.value)} onKeyPress={search} />
     {pokemon.name && (
       <div className='pokemon'>
-        <h2 className='pokemonName'>
+        <h2 className='pokemonName'> </h2>
           <span>Name: {pokemon.name}</span> <br />
           <span>Height: {pokemon.height}</span> <br />
+
+          {/* Going to need to put the abilities array in an if statement since
+          Not all pokemon have the same number of abilities */}
+          <h3>Abilities:</h3>
           <span>{pokemon.abilities[0].ability.name}</span> <br />
           <span>{pokemon.abilities[1].ability.name}</span> <br />
-          <span>{pokemon.abilities[2].ability.name}</span> <br />
-
-      </h2>
+          <img className='pokemonImg' src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt={pokemon.name} />
+     
     </div>
   
     )}
