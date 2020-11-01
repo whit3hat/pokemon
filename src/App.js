@@ -16,10 +16,13 @@ const App = () => {
       console.log(data)
      //Passing the data of the response to the pokemon state to display information on the site
       setPokemon(data);
-      // Clears the search box after the search is made
+
+     
       setQuery('')
     }
   }
+
+
 
   return (
   <div className='main-container'>
@@ -34,8 +37,9 @@ const App = () => {
           {/* Going to need to put the abilities array in a foreach
           Not all pokemon have the same number of abilities */}
           <h3>Abilities:</h3>
+          
           <span>{pokemon.abilities[0].ability.name}</span> <br />
-          <span>{pokemon.abilities[1].ability.name}</span> <br />
+          {/* <span>{pokemon.abilities[1].ability.name}</span> <br /> */}
           <img className='pokemonImg' src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`} alt={pokemon.name} />
      
     </div>
