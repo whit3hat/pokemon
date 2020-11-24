@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import Home from '../src/pages/Home';
 import {fetchPokemon} from './api/fetchPokemon';
+import fetchAbilities from './api/fetchAbilities';
 
 
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
      //Passing the data of the response to the pokemon state to display information on the site
       setPokemon(data);
 
-     
+      fetchAbilities();
       setQuery('')
     }
   }
