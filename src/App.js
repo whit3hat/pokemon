@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 // import Home from '../src/pages/Home';
 import {fetchPokemon} from './api/fetchPokemon';
-import fetchAbilities from './api/fetchAbilities';
-
 
 const App = () => {
   const [query, setQuery] = useState('');
@@ -13,16 +11,24 @@ const App = () => {
     if(e.key === 'Enter') {
       //Pass the query of the pokemon name to the api call to search
       const data = await fetchPokemon(query)
+      
       //Console logging the results of the search
       console.log(data)
+
      //Passing the data of the response to the pokemon state to display information on the site
       setPokemon(data);
 
-      fetchAbilities();
+      
       setQuery('')
     }
   }
 
+//**  Fetch Abilities array **//
+  const fetchAbilities = pokemon.abilities
+
+
+  console.log(fetchAbilities);
+  
 
 
   return (
