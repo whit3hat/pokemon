@@ -7,7 +7,7 @@ export const fetchPokemon = async (query) => {
         `https://pokeapi.co/api/v2/pokemon/${query}`
 
     );
-        console.log(data.abilities)
+        console.log(data)
     return data;
 
 }
